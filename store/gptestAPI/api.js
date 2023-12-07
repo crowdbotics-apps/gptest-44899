@@ -12,6 +12,24 @@ function api_v1_login_create(payload) {
 function api_v1_signup_create(payload) {
   return gptestAPI.post(`/api/v1/signup/`, payload)
 }
+function api_v1_svtest_list(payload) {
+  return gptestAPI.get(`/api/v1/svtest/`)
+}
+function api_v1_svtest_create(payload) {
+  return gptestAPI.post(`/api/v1/svtest/`, payload)
+}
+function api_v1_svtest_retrieve(payload) {
+  return gptestAPI.get(`/api/v1/svtest/${payload.id}/`)
+}
+function api_v1_svtest_update(payload) {
+  return gptestAPI.put(`/api/v1/svtest/${payload.id}/`, payload)
+}
+function api_v1_svtest_partial_update(payload) {
+  return gptestAPI.patch(`/api/v1/svtest/${payload.id}/`, payload)
+}
+function api_v1_svtest_destroy(payload) {
+  return gptestAPI.delete(`/api/v1/svtest/${payload.id}/`)
+}
 function rest_auth_login_create(payload) {
   return gptestAPI.post(`/rest-auth/login/`, payload)
 }
@@ -49,6 +67,12 @@ export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
   api_v1_signup_create,
+  api_v1_svtest_list,
+  api_v1_svtest_create,
+  api_v1_svtest_retrieve,
+  api_v1_svtest_update,
+  api_v1_svtest_partial_update,
+  api_v1_svtest_destroy,
   rest_auth_login_create,
   rest_auth_logout_create,
   rest_auth_password_change_create,
